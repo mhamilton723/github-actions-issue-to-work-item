@@ -147,7 +147,7 @@ async function create(vm) {
     },
     {
       op: "add",
-      path: "/relations/",
+      path: "/relations/-",
       value: [
         {
           rel: "Hyperlink",
