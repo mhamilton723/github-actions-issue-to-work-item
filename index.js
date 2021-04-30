@@ -118,7 +118,7 @@ async function main() {
 }
 
 function title(vm){
-  return "MMLSpark Issue Import" + vm.title + " (GitHub Issue #" + vm.number + ")"
+  return vm.title + " (GitHub Issue #" + vm.number + ")"
 }
 
 
