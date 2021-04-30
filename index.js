@@ -157,7 +157,7 @@ async function create(vm) {
       op: "add",
       path: "/relations/-",
       value: {
-          rel: "Hierarchy-reverse",
+          rel: "System.LinkTypes.Hierarchy-Reverse",
           url: "https://msdata.visualstudio.com/A365/_workitems/edit/1153303",
         }
     },
