@@ -117,13 +117,18 @@ async function main() {
   }
 }
 
+function title(vm){
+  return "MMLSpark Issue Import" + vm.title + " (GitHub Issue #" + vm.number + ")"
+}
+
+
 // create Work Item via https://docs.microsoft.com/en-us/rest/api/azure/devops/
 async function create(vm) {
   let patchDocument = [
     {
       op: "add",
       path: "/fields/System.Title",
-      value: vm.title + " (GitHub Issue #" + vm.number + ")",
+      value: title(vm),
     },
     {
       op: "add",
@@ -138,7 +143,7 @@ async function create(vm) {
     {
       op: "add",
       path: "/fields/System.Tags",
-      value: "GitHub Issue; " + vm.repo_name,
+      value: "synapseml; GitHub Issue; " + vm.repo_name,
     },
     {
       op: "add",
@@ -235,13 +240,12 @@ async function update(vm, workItem) {
   let patchDocument = [];
 
   if (
-    workItem.fields["System.Title"] !=
-    `${vm.title} (GitHub Issue #${vm.number})`
+    workItem.fields["System.Title"] != title(vm)
   ) {
     patchDocument.push({
       op: "add",
       path: "/fields/System.Title",
-      value: vm.title + " (GitHub Issue #" + vm.number + ")",
+      value:  title(vm),
     });
   }
 
