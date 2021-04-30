@@ -148,16 +148,18 @@ async function create(vm) {
     {
       op: "add",
       path: "/relations/-",
-      value: [
-        {
+      value: {
           rel: "Hyperlink",
           url: vm.url,
-        },
-        {
+        }
+    },
+    {
+      op: "add",
+      path: "/relations/-",
+      value: {
           rel: "Parent",
           url: "https://msdata.visualstudio.com/A365/_workitems/edit/1153303",
-        },
-      ]
+        }
     },
     {
       op: "add",
