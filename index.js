@@ -113,7 +113,7 @@ async function main() {
       core.setOutput(`id`, `${workItem.id}`);
     }
   } catch (error) {
-    core.setFailed(error);
+    core.setFailed(error.toString());
   }
 }
 
@@ -237,7 +237,7 @@ async function create(vm) {
     console.log("Error: creatWorkItem failed");
     console.log(patchDocument);
     console.log(error);
-    core.setFailed(error);
+    core.setFailed(error.toString());
   }
 
   return workItemSaveResult;
@@ -423,7 +423,7 @@ async function find(vm) {
     console.log(
       "Error: Connecting to organization. Check the spelling of the organization name and ensure your token is scoped correctly."
     );
-    core.setFailed(error);
+    core.setFailed(error.toString());
     return -1;
   }
 
@@ -450,7 +450,7 @@ async function find(vm) {
   } catch (error) {
     console.log("Error: queryByWiql failure");
     console.log(error);
-    core.setFailed(error);
+    core.setFailed(error.toString());
     return -1;
   }
 
@@ -462,7 +462,7 @@ async function find(vm) {
       return result;
     } catch (error) {
       console.log("Error: getWorkItem failure");
-      core.setFailed(error);
+      core.setFailed(error.toString());
       return -1;
     }
   } else {
