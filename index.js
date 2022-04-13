@@ -143,7 +143,7 @@ async function create(vm) {
     {
       op: "add",
       path: "/fields/System.Tags",
-      value: "synapseml; GitHub Issue; " + vm.repo_name,
+      value: "synapseml; synapseml-triage; GitHub Issue; " + vm.repo_name,
     },
     {
       op: "add",
